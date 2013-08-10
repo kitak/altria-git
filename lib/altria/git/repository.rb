@@ -18,6 +18,7 @@ module Altria
 
       def before_execute
         clone if has_repository_url?
+        update if updated_since_last_finished_build?
       end
 
       def after_execute
